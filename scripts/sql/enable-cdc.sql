@@ -14,8 +14,8 @@ FETCH NEXT FROM db_cursor INTO @tableName
 WHILE @@FETCH_STATUS = 0  
 BEGIN  
     -- Create CDC proc on table
-    IF NOT charindex('dbo_', @tableName) >= 1
-    BEGIN
+    IF OBJECT_ID(@tableName, N'U') IS NOT NULL
+    BEGIN 
         EXEC sys.sp_cdc_enable_table @source_schema = 'dbo', @source_name = @tableName, @role_name = NULL, @supports_net_changes = 0;
     END
 
