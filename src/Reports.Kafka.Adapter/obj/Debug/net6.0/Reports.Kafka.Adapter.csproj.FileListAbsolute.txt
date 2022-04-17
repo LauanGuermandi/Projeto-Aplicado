@@ -1,0 +1,12 @@
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\bin\Debug\net6.0\Reports.Kafka.Adapter.deps.json
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\bin\Debug\net6.0\Reports.Kafka.Adapter.dll
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\bin\Debug\net6.0\Reports.Kafka.Adapter.pdb
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\obj\Debug\net6.0\Reports.Kafka.Adapter.csproj.AssemblyReference.cache
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\obj\Debug\net6.0\Reports.Kafka.Adapter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\obj\Debug\net6.0\Reports.Kafka.Adapter.AssemblyInfoInputs.cache
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\obj\Debug\net6.0\Reports.Kafka.Adapter.AssemblyInfo.cs
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\obj\Debug\net6.0\Reports.Kafka.Adapter.csproj.CoreCompileInputs.cache
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\obj\Debug\net6.0\Reports.Kafka.Adapter.dll
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\obj\Debug\net6.0\refint\Reports.Kafka.Adapter.dll
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\obj\Debug\net6.0\Reports.Kafka.Adapter.pdb
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Kafka.Adapter\obj\Debug\net6.0\ref\Reports.Kafka.Adapter.dll

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "vSb7jSXzinnI427RSL1k2IvOEROhIaX2nZ1SqqOa0y9TfcQSKhVRl5VqhGvy7Fij4EBkOssZnO+AVnQ/6f4HYg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lauan\\Desktop\\Projeto Aplicado\\src\\Reports.Core\\Reports.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lauan\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\lauan\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\lauan\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\lauan\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

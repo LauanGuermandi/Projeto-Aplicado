@@ -1,0 +1,15 @@
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\bin\Debug\net6.0\Reports.CrossCutting.deps.json
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\bin\Debug\net6.0\Reports.CrossCutting.dll
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\bin\Debug\net6.0\Reports.CrossCutting.pdb
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\bin\Debug\net6.0\Reports.Core.dll
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\bin\Debug\net6.0\Reports.Core.pdb
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\obj\Debug\net6.0\Reports.CrossCutting.csproj.AssemblyReference.cache
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\obj\Debug\net6.0\Reports.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\obj\Debug\net6.0\Reports.CrossCutting.AssemblyInfoInputs.cache
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\obj\Debug\net6.0\Reports.CrossCutting.AssemblyInfo.cs
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\obj\Debug\net6.0\Reports.CrossCutting.csproj.CoreCompileInputs.cache
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\obj\Debug\net6.0\Reports.CrossCutting.csproj.CopyComplete
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\obj\Debug\net6.0\Reports.CrossCutting.dll
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\obj\Debug\net6.0\refint\Reports.CrossCutting.dll
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\obj\Debug\net6.0\Reports.CrossCutting.pdb
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.CrossCutting\obj\Debug\net6.0\ref\Reports.CrossCutting.dll

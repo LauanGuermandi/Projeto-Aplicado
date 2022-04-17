@@ -1,0 +1,15 @@
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\bin\Debug\net6.0\Reports.Application.deps.json
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\bin\Debug\net6.0\Reports.Application.dll
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\bin\Debug\net6.0\Reports.Application.pdb
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\bin\Debug\net6.0\Reports.Core.dll
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\bin\Debug\net6.0\Reports.Core.pdb
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\obj\Debug\net6.0\Reports.Application.csproj.AssemblyReference.cache
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\obj\Debug\net6.0\Reports.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\obj\Debug\net6.0\Reports.Application.AssemblyInfoInputs.cache
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\obj\Debug\net6.0\Reports.Application.AssemblyInfo.cs
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\obj\Debug\net6.0\Reports.Application.csproj.CoreCompileInputs.cache
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\obj\Debug\net6.0\Reports.Application.csproj.CopyComplete
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\obj\Debug\net6.0\Reports.Application.dll
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\obj\Debug\net6.0\refint\Reports.Application.dll
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\obj\Debug\net6.0\Reports.Application.pdb
+C:\Users\lauan\Desktop\Projeto Aplicado\src\Reports.Application\obj\Debug\net6.0\ref\Reports.Application.dll
