@@ -1,4 +1,6 @@
-﻿namespace Reports.Api
+﻿using Reports.Api.Configuration;
+
+namespace Reports.Api
 {
 	public class Startup : Interfaces.IStartup
 	{
@@ -11,13 +13,13 @@
 			WebHostEnvironment = webHostEnvironment;
 		}
 
-		public void Configure(WebApplication app)
-		{
-
-		}
 		public void ConfigureServices(IServiceCollection services)
-		{
+			=> services.AddWebApiConfiguration()
+					   .AddSwagger("Reports.Api");
 
-		}
+		public void Configure(WebApplication app)
+			=> app.UseWebApiConfiguration()
+				  .UseSwaggerWithUI();
 	}
 }
+

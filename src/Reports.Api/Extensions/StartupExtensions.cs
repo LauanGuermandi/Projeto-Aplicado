@@ -1,4 +1,4 @@
-﻿using Reports.Core.Interfaces;
+﻿using IStartup = Reports.Api.Interfaces.IStartup;
 
 namespace Reports.Api.Extensions
 {
