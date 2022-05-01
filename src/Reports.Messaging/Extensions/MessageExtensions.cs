@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using Confluent.Kafka;
-using Reports.Messaging.Interfaces;
-using Reports.Messaging.Topics;
+using Reports.Core.Messaging.Interfaces;
+using Reports.Core.Messaging.Topics;
 
 namespace Reports.Messaging.Extensions
 {

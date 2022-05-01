@@ -1,5 +1,6 @@
 ﻿using Confluent.Kafka;
 using Microsoft.Extensions.Options;
+using Reports.Core.Messaging.Interfaces;
 using Reports.Messaging.Interfaces;
 using Reports.Messaging.Serializers;
 
@@ -10,11 +11,11 @@ namespace Reports.Messaging.Builders
 		private readonly ProducerConfig _producerConfig;
 
 		public ProducerBuilder(IOptions<ProducerConfig> producerConfig)
-				=> _producerConfig = producerConfig?.Value ?? throw new ArgumentNullException(nameof(producerConfig));
+				=> _producerConfig = producerConfig.Value;
 
 		public IProducer<string, T> Build()
 			=> new ProducerBuilder<string, T>(_producerConfig)
-			.SetValueSerializer(new JsonSerializer<T>())
-			.Build();
+				.SetValueSerializer(new JsonSerializer<T>())
+				.Build();
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using Confluent.Kafka;
 using Reports.Core.Interfaces;
+using Reports.Core.Messaging.Interfaces;
 using Reports.Messaging.Extensions;
 using Reports.Messaging.Interfaces;
 
@@ -7,18 +8,20 @@ namespace Reports.Messaging.Adapters
 {
 	public class ProducerAdapter<T> : IProducerAdapter<T>, IDisposable where T : IMessage
 	{
-		private readonly Lazy<IProducer<string, T>> _producer;
+		private readonly IProducer<string, T> _producer;
 
 		private bool _disposed = false;
 
 		public ProducerAdapter(IProducerBuilder<T> producerBuilder)
-			=> _producer = new Lazy<IProducer<string, T>>(() => producerBuilder.Build());
+			=> _producer = producerBuilder.Build();
 
 		public async Task ProduceAsync(T message)
 		{
+			ArgumentNullException.ThrowIfNull(message);
+
 			var topic = message.GetTopic();
 			var messageToProduce = message.MakeMessage();
-			await _producer.Value.ProduceAsync(topic, messageToProduce);
+			await _producer.ProduceAsync(topic, messageToProduce);
 		}
 
 		#region Disposible
@@ -29,10 +32,10 @@ namespace Reports.Messaging.Adapters
 			Dispose(true);
 		}
 
-		protected virtual void Dispose(bool disposing)
+		protected void Dispose(bool disposing)
 		{
-			if (disposing && !_disposed && _producer.IsValueCreated)
-				_producer.Value.Dispose();
+			if (disposing && !_disposed)
+				_producer.Dispose();
 
 			_disposed = true;
 		}
