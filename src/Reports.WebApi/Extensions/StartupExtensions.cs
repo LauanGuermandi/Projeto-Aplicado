@@ -19,7 +19,7 @@ namespace Reports.WebApi.Extensions
 
 		private static IStartup MakeStartup<TStartup>(this WebApplicationBuilder webAppBuilder) where TStartup : IStartup
 		{
-			var startup = Activator.CreateInstance(typeof(TStartup), webAppBuilder.Environment, webAppBuilder.Configuration) as IStartup;
+			var startup = Activator.CreateInstance(typeof(TStartup), webAppBuilder.Configuration) as IStartup;
 			ArgumentNullException.ThrowIfNull(startup);
 
 			return startup;

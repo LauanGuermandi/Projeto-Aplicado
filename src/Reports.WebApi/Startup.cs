@@ -1,24 +1,22 @@
-﻿using Reports.WebApi.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Reports.Infrastruture.Context;
 using Reports.Messaging.Configuration;
+using Reports.WebApi.Configuration;
 
 namespace Reports.WebApi
 {
 	public class Startup : Interfaces.IStartup
 	{
-		public IWebHostEnvironment WebHostEnvironment;
 		public IConfiguration Configuration { get; }
 
-		public Startup(IWebHostEnvironment webHostEnvironment, IConfiguration configuration)
-		{
-			Configuration = configuration;
-			WebHostEnvironment = webHostEnvironment;
-		}
+		public Startup(IConfiguration configuration)
+			=> Configuration = configuration;
 
 		public void ConfigureServices(IServiceCollection services)
-			=> services.AddMessagingConfiguration(Configuration)
+			=> services.AddMessagingConfigurationForProducer(Configuration)
 					   .AddDependencyInjectionConfiguration()
 					   .AddWebApiConfiguration()
-			           .AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies())
+					   .AddDbContext<ReportsContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ReportsConnectionString")))
 					   .AddSwagger("Reports.WebApi");
 
 		public void Configure(WebApplication app)

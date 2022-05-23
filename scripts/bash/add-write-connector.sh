@@ -1,151 +1,47 @@
 #!/bin/bash
 
+
+curl -X DELETE http://localhost:8084/connectors/postgres-sink-pessoa
+curl -X DELETE http://localhost:8084/connectors/postgres-sink-pessacontato
+
 #### PESSOA ####
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8084/connectors/ -d '
 {
-  "name": "connector-sink-PESSOA",
+  "name": "postgres-sink-pessoa",
   "config": {
-    "connector.class" : "com.mongodb.kafka.connect.MongoSinkConnector",
-    "tasks.max" : "1",
-    "topics": "dbserver.dbo.PESSOA",
-    "connection.uri": "mongodb://mongo:27017/PROJETOAPLICADO",
-    "database": "PROJETOAPLICADO",
-    "collection": "PESSOA",
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "topics": "sqlserver-PESSOA",
+    "connection.url": "jdbc:postgresql://postgres:5432/postgres?options=-c%20search_path=public",
+    "connection.user": "postgres",
+    "connection.password": "postgres",
+    "table.name.format": "PESSOA",
+    "insert.mode": "insert",
+    "pk.mode": "none",
+    "auto.create": "true",
     "database.history.kafka.bootstrap.servers" : "kafka:9092",
-    "database.history.kafka.topic": "schema-changes.inventory",
-    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "document.id.strategy": "com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy",
-    "document.id.strategy.partial.value.projection.list":"IDPESSOA",
-    "document.id.strategy.partial.value.projection.type":"AllowList",
-    "writemodel.strategy":"com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneBusinessKeyStrategy",
-    "transforms": "InsertField,ExtractField",
-    "transforms.InsertField.type": "org.apache.kafka.connect.transforms.InsertField$Value",
-    "transforms.InsertField.static.field": "MessageSource",
-    "transforms.InsertField.static.value": "Kafka Connect framework",
-    "transforms.ExtractField.type":"org.apache.kafka.connect.transforms.ExtractField$Value",
-    "transforms.ExtractField.field":"after"
+    "database.history.kafka.topic": "schema-changes.inventory"
   }
 }
 '
 
-
-### PESSOAFISICA ###
+#### PESSOACONTATO ####
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8084/connectors/ -d '
 {
-  "name": "connector-sink-PESSOAFISICA",
+  "name": "postgres-sink-pessoacontato",
   "config": {
-    "connector.class" : "com.mongodb.kafka.connect.MongoSinkConnector",
-    "tasks.max" : "1",
-    "topics": "dbserver.dbo.PESSOAFISICA",
-    "connection.uri": "mongodb://mongo:27017/PROJETOAPLICADO",
-    "database": "PROJETOAPLICADO",
-    "collection": "PESSOAFISICA",
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "topics": "sqlserver-PESSOACONTATO",
+    "connection.url": "jdbc:postgresql://postgres:5432/postgres?options=-c%20search_path=public",
+    "connection.user": "postgres",
+    "connection.password": "postgres",
+    "table.name.format": "PESSOACONTATO",
+    "insert.mode": "insert",
+    "pk.mode": "none",
+    "auto.create": "true",
     "database.history.kafka.bootstrap.servers" : "kafka:9092",
-    "database.history.kafka.topic": "schema-changes.inventory",
-    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "document.id.strategy": "com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy",
-    "document.id.strategy.partial.value.projection.list":"IDPESSOA",
-    "document.id.strategy.partial.value.projection.type":"AllowList",
-    "writemodel.strategy":"com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneBusinessKeyStrategy",
-    "transforms": "InsertField,ExtractField",
-    "transforms.InsertField.type": "org.apache.kafka.connect.transforms.InsertField$Value",
-    "transforms.InsertField.static.field": "MessageSource",
-    "transforms.InsertField.static.value": "Kafka Connect framework",
-    "transforms.ExtractField.type":"org.apache.kafka.connect.transforms.ExtractField$Value",
-    "transforms.ExtractField.field":"after"
+    "database.history.kafka.topic": "schema-changes.inventory"
   }
 }
 '
-
-### PESSOAJURIDICA ###
-curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8084/connectors/ -d '
-{
-  "name": "connector-sink-PESSOAJURIDICA",
-  "config": {
-    "connector.class" : "com.mongodb.kafka.connect.MongoSinkConnector",
-    "tasks.max" : "1",
-    "topics": "dbserver.dbo.PESSOAJURIDICA",
-    "connection.uri": "mongodb://mongo:27017/PROJETOAPLICADO",
-    "database": "PROJETOAPLICADO",
-    "collection": "PESSOAJURIDICA",
-    "database.history.kafka.bootstrap.servers" : "kafka:9092",
-    "database.history.kafka.topic": "schema-changes.inventory",
-    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "document.id.strategy": "com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy",
-    "document.id.strategy.partial.value.projection.list":"IDPESSOA",
-    "document.id.strategy.partial.value.projection.type":"AllowList",
-    "writemodel.strategy":"com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneBusinessKeyStrategy",
-    "transforms": "InsertField,ExtractField",
-    "transforms.InsertField.type": "org.apache.kafka.connect.transforms.InsertField$Value",
-    "transforms.InsertField.static.field": "MessageSource",
-    "transforms.InsertField.static.value": "Kafka Connect framework",
-    "transforms.ExtractField.type":"org.apache.kafka.connect.transforms.ExtractField$Value",
-    "transforms.ExtractField.field":"after"
-  }
-}
-'
-
-
-
-### PESSOATELEFONE ###
-curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8084/connectors/ -d '
-{
-  "name": "connector-sink-PESSOATELEFONE",
-  "config": {
-    "connector.class" : "com.mongodb.kafka.connect.MongoSinkConnector",
-    "tasks.max" : "1",
-    "topics": "dbserver.dbo.PESSOATELEFONE",
-    "connection.uri": "mongodb://mongo:27017/PROJETOAPLICADO",
-    "database": "PROJETOAPLICADO",
-    "collection": "PESSOATELEFONE",
-    "database.history.kafka.bootstrap.servers" : "kafka:9092",
-    "database.history.kafka.topic": "schema-changes.inventory",
-    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "document.id.strategy": "com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy",
-    "document.id.strategy.partial.value.projection.list":"IDPESSOA",
-    "document.id.strategy.partial.value.projection.type":"AllowList",
-    "writemodel.strategy":"com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneBusinessKeyStrategy",
-    "transforms": "InsertField,ExtractField",
-    "transforms.InsertField.type": "org.apache.kafka.connect.transforms.InsertField$Value",
-    "transforms.InsertField.static.field": "MessageSource",
-    "transforms.InsertField.static.value": "Kafka Connect framework",
-    "transforms.ExtractField.type":"org.apache.kafka.connect.transforms.ExtractField$Value",
-    "transforms.ExtractField.field":"after"
-  }
-}
-'
-
-
-### PESSOAEMAIL ###
-curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" localhost:8084/connectors/ -d '
-{
-  "name": "connector-sink-PESSOAEMAIL",
-  "config": {
-    "connector.class" : "com.mongodb.kafka.connect.MongoSinkConnector",
-    "tasks.max" : "1",
-    "topics": "dbserver.dbo.PESSOAEMAIL",
-    "connection.uri": "mongodb://mongo:27017/PROJETOAPLICADO",
-    "database": "PROJETOAPLICADO",
-    "collection": "PESSOAEMAIL",
-    "database.history.kafka.bootstrap.servers" : "kafka:9092",
-    "database.history.kafka.topic": "schema-changes.inventory",
-    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
-    "document.id.strategy": "com.mongodb.kafka.connect.sink.processor.id.strategy.PartialValueStrategy",
-    "document.id.strategy.partial.value.projection.list":"IDPESSOA",
-    "document.id.strategy.partial.value.projection.type":"AllowList",
-    "writemodel.strategy":"com.mongodb.kafka.connect.sink.writemodel.strategy.ReplaceOneBusinessKeyStrategy",
-    "transforms": "InsertField,ExtractField",
-    "transforms.InsertField.type": "org.apache.kafka.connect.transforms.InsertField$Value",
-    "transforms.InsertField.static.field": "MessageSource",
-    "transforms.InsertField.static.value": "Kafka Connect framework",
-    "transforms.ExtractField.type":"org.apache.kafka.connect.transforms.ExtractField$Value",
-    "transforms.ExtractField.field":"after"
-  }
-}
-'
-

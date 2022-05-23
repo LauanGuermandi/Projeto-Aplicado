@@ -1,7 +1,7 @@
 version: '3'
 services:
   zookeeper:
-    image: debezium/zookeeper:1.3
+    image: debezium/zookeeper:latest
     ports:
      - 2181:2181
      - 2888:2888
@@ -9,7 +9,7 @@ services:
     networks:
       - localnetwork
   kafka:
-    image: debezium/kafka:1.3
+    image: debezium/kafka:latest
     ports:
      - 9092:9092
     links:
@@ -39,22 +39,25 @@ services:
      - MSSQL_AGENT_ENABLED=true
     networks:
       - localnetwork
-  mongo:
-    image: mongo
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     ports:
-      - 27017:27017
+      - '5432:5432'
     networks:
       - localnetwork
-  mongo-express:
-    image: mongo-express
-    ports:
-      - 8081:8081
+  pgadmin:
+    image: dpage/pgadmin4
     environment:
-      ME_CONFIG_BASICAUTH_USERNAME: root
-      ME_CONFIG_BASICAUTH_PASSWORD: root
-      ME_CONFIG_MONGODB_PORT: 27017
-    links:
-      - mongo
+      PGADMIN_DEFAULT_EMAIL: "lauanguermandi@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "postgres"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres
     networks:
       - localnetwork
   connect_source:
@@ -80,7 +83,6 @@ services:
       - 8084:8083
     links:
       - kafka
-      - mongo
     networks:
       - localnetwork
     environment:
